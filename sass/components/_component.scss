@@ -52,3 +52,24 @@
     }
 
 }
+
+
+///////////MAST-HEAD/////////
+.masthead {
+    width: 100%;
+    height: 45rem;
+    background-image: url('../../img/masthead.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid var(--Grey-light-2);
+    // position: relative;
+
+        
+   
+
+}
