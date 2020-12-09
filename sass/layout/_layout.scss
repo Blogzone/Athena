@@ -1,0 +1,19 @@
+.container {
+    max-width: 100%;
+    // background-color: orangered;
+    box-shadow: var(--shadow-dark);
+    min-height: 100rem; 
+    
+}
+
+.header {
+    height: 8rem;
+    background-color: var(--color-primary-text);
+    border-bottom: 1px solid var(--Grey-dark-2);
+    color: var(--color-secondary-text);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

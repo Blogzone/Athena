@@ -1,0 +1,54 @@
+//////////LOGO///////
+.logo {
+    // height: 3.25rem;
+    margin-left: 2rem;    
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+
+    &__svg {
+        height: 4.25rem;
+        margin-right: 1rem;
+    }
+
+    &__text {
+        font-size: 3rem;
+        font-weight: 600;
+        
+    }
+
+}
+
+
+///////////NAVIGATION///////
+.user-nav {
+    
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    
+
+    &__item {
+        padding: 0 2rem;       
+        height: 100%;
+        display: flex;
+        align-items: center;       
+        
+    }
+    &__item:hover {
+        background: -webkit-linear-gradient(315deg, var(--color-theme-1), var(--color-theme-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+    }
+
+    &__link { 
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--color-secondary-text);
+
+    }
+
+}
