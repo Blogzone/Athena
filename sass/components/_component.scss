@@ -58,10 +58,10 @@
 .masthead {
     width: 100%;
     height: 45rem;
-    background-image: url('../../img/masthead.svg');
+    background-image: url('../../img/masthead.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: bottom;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,4 +72,31 @@
         
    
 
+}
+
+
+/////////LATEST-BLOGS/////
+.latest-blogs {
+    
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2rem;
+
+    &__blog {
+        padding: 5.3rem;
+        background-image: linear-gradient(to bottom right, var(--color-theme-2) , var(--color-theme-1));
+        // background-color: var(--color-primary-text);
+        border-radius: 2rem;
+        margin-bottom: 2rem;        
+
+        
+    }
+
+}
+
+.genres {
+    background-color: var(--Grey-light-2);
+    flex: 1;
 }

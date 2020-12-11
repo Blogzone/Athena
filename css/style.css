@@ -20,6 +20,7 @@ Grey dark 3: #999
   --color-theme-2: #92FE9D;
   --color-primary-text: #000000;
   --color-secondary-text: #DBDBDB;
+  --pure-white: #ffffff;
   --Grey-light-1: #faf9f9;
   --Grey-light-2: #f4f2f2;
   --Grey-light-3: #f0eeee;
@@ -50,6 +51,19 @@ body {
 .masthead__text {
   font-size: 8rem;
   font-weight: 600;
+  color: var(--color-primary-text); }
+
+.latest-blogs__blog--title {
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 5.4rem;
+  color: var(--color-primary-text); }
+
+.latest-blogs__blog--info {
+  font-size: 1.7rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 2.7rem;
   color: var(--color-primary-text); }
 
 .logo {
@@ -87,25 +101,49 @@ body {
 .masthead {
   width: 100%;
   height: 45rem;
-  background-image: url("../../img/masthead.svg");
+  background-image: url("../../img/masthead.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: bottom;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--Grey-light-2); }
 
+.latest-blogs {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 2rem; }
+  .latest-blogs__blog {
+    padding: 5.3rem;
+    background-image: linear-gradient(to bottom right, var(--color-theme-2), var(--color-theme-1));
+    border-radius: 2rem;
+    margin-bottom: 2rem; }
+
+.genres {
+  background-color: var(--Grey-light-2);
+  flex: 1; }
+
 .container {
   max-width: 100%;
   box-shadow: var(--shadow-dark);
-  min-height: 100rem; }
+  min-height: 100vh; }
 
 .header {
   height: 8rem;
   background-color: var(--color-primary-text);
-  border-bottom: 1px solid var(--Grey-dark-2);
+  border-bottom: 1px solid var(--Grey-dark-1);
   color: var(--color-secondary-text);
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+.content {
+  margin: 0 2rem;
+  background-color: var(--pure-white);
+  padding: 4rem 2rem;
+  display: flex;
+  min-height: 50rem;
+  border-bottom: 1px solid var(--Grey-light-2); }

@@ -2,18 +2,29 @@
     max-width: 100%;
     // background-color: orangered;
     box-shadow: var(--shadow-dark);
-    min-height: 100rem; 
+    min-height: 100vh; 
     
 }
 
 .header {
     height: 8rem;
     background-color: var(--color-primary-text);
-    border-bottom: 1px solid var(--Grey-dark-2);
+    border-bottom: 1px solid var(--Grey-dark-1);
     color: var(--color-secondary-text);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+}
+
+.content {
+    margin: 0 2rem;
+    background-color: var(--pure-white);
+    padding: 4rem 2rem;
+    display: flex;
+    min-height: 50rem;
+    border-bottom: 1px solid var(--Grey-light-2);
+    
 
 }

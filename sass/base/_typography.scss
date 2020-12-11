@@ -3,3 +3,21 @@
     font-weight: 600;
     color: var(--color-primary-text); 
 }
+
+.latest-blogs__blog--title {
+    font-size: 3.4rem;
+    font-weight: 600;
+    
+    line-height: 5.4rem;
+    color: var(--color-primary-text);            
+}
+
+.latest-blogs__blog--info {
+    font-size: 1.7rem;
+    font-weight: 400;
+    font-style: italic;
+    
+    line-height: 2.7rem;
+    color: var(--color-primary-text);      
+    
+}
