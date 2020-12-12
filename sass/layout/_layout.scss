@@ -8,9 +8,9 @@
 
 .header {
     height: 8rem;
-    background-color: var(--color-primary-text);
+    background-color: var(--pure-black);
     border-bottom: 1px solid var(--Grey-dark-1);
-    color: var(--color-secondary-text);
+    color: var(--pure-white);
 
     display: flex;
     justify-content: space-between;
@@ -26,5 +26,14 @@
     min-height: 50rem;
     border-bottom: 1px solid var(--Grey-light-2);
     
+
+}
+
+.page-footer {
+    
+    
+   
+    background-color: var(--pure-black);
+    min-height: 30rem;
 
 }

@@ -37,17 +37,19 @@
         align-items: center;       
         
     }
-    &__item:hover {
-        background: -webkit-linear-gradient(315deg, var(--color-theme-1), var(--color-theme-2));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    &__link:hover {
+        // background: -webkit-linear-gradient(315deg, var(--color-theme-1), var(--color-theme-2));
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        color: var(--color-hover);
+        
         
     }
 
     &__link { 
         cursor: pointer;
         text-decoration: none;
-        color: var(--color-secondary-text);
+        color: var(--pure-white);
 
     }
 
@@ -59,6 +61,7 @@
     width: 100%;
     height: 45rem;
     background-image: url('../../img/masthead.jpg');
+    // background-color: var(--color-theme1);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -86,8 +89,9 @@
 
     &__blog {
         padding: 5.3rem;
-        background-image: linear-gradient(to bottom right, var(--color-theme-2) , var(--color-theme-1));
-        // background-color: var(--color-primary-text);
+        // background-image: linear-gradient(to bottom right, var(--color-theme-2) , var(--color-theme-1));
+        background-color: var(--pure-white);
+        box-shadow: var(--shadow-dark);
         border-radius: 2rem;
         margin-bottom: 2rem;        
 
@@ -97,6 +101,49 @@
 }
 
 .genres {
-    background-color: var(--Grey-light-2);
+    background-color: var(--pure-white);
+    // box-shadow: var(--shadow-dark);
+    // border-radius: 2rem;
+    
     flex: 1;
+}
+
+/////////FOOTER//////
+
+.part-help {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+
+    &__link {
+        margin-right: 10rem;
+
+        &--text {
+            font-size: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            
+
+        }
+        &--text > a {
+            text-decoration: none;
+            color: var(--pure-white);
+            &:hover {
+           
+                color: var(--color-hover);
+            }
+        }
+        
+    }
+    
+
+}
+
+.white-light {
+    
+    border: 1px solid var(--pure-white);
+    width: 80%;
+    margin: auto;
 }

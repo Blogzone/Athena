@@ -1,7 +1,7 @@
 .masthead__text {
     font-size: 8rem;
     font-weight: 600;
-    color: var(--color-primary-text); 
+    color: var(--pure-white); 
 }
 
 .latest-blogs__blog--title {
@@ -18,6 +18,13 @@
     font-style: italic;
     
     line-height: 2.7rem;
-    color: var(--color-primary-text);      
+    color: var(--color-secondary-text);      
     
+}
+
+.section-headline {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--color-headline-text);
 }
