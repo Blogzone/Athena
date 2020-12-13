@@ -138,7 +138,6 @@ body {
     margin-bottom: 2rem; }
 
 .genres {
-  background-color: var(--pure-white);
   flex: 1; }
 
 .part-help {
@@ -207,3 +206,60 @@ body {
 .page-footer {
   background-color: var(--pure-black);
   min-height: 30rem; }
+
+.login-container {
+  max-width: 100rem;
+  background-color: var(--pure-white);
+  box-shadow: var(--shadow-dark);
+  border-radius: 1rem;
+  min-height: 80vh;
+  display: flex;
+  margin: 10rem auto; }
+
+.form-container {
+  flex: 0 0 50%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.overlay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  padding: 0 5rem;
+  height: 100%;
+  text-align: center; }
+  .login__text {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--color-headline-text);
+    margin-bottom: 2.5rem; }
+  .login > input {
+    background-color: #eee;
+    border: none;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    width: 100%; }
+  .login__btn {
+    border-radius: 2rem;
+    border: 2px solid var(--color-headline-text);
+    background-color: var(--pure-white);
+    color: var(--color-headline-text);
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 1.2rem 4.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    cursor: pointer; }
