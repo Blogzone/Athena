@@ -74,6 +74,14 @@ body {
   margin-bottom: 2rem;
   color: var(--color-headline-text); }
 
+.part-vision--text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.8rem;
+  text-align: center;
+  color: var(--pure-white); }
+
 .logo {
   margin-left: 2rem;
   display: flex;
@@ -140,6 +148,8 @@ body {
   padding: 4rem 0; }
   .part-help__link {
     margin-right: 10rem; }
+    .part-help__link:last-child {
+      margin-right: 0rem; }
     .part-help__link--text {
       font-size: 2rem;
       font-weight: 500;
@@ -152,8 +162,25 @@ body {
 
 .white-light {
   border: 1px solid var(--pure-white);
-  width: 80%;
+  width: 70%;
   margin: auto; }
+
+.part-vision {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 30rem; }
+
+.part-legal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: var(--color-primary-text); }
+  .part-legal--text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--pure-white); }
 
 .container {
   max-width: 100%;

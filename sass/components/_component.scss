@@ -120,6 +120,12 @@
     &__link {
         margin-right: 10rem;
 
+        &:last-child {
+            margin-right: 0rem;
+        }
+        
+        
+
         &--text {
             font-size: 2rem;
             font-weight: 500;
@@ -141,9 +147,35 @@
 
 }
 
+///HR TAG////
 .white-light {
     
     border: 1px solid var(--pure-white);
-    width: 80%;
+    width: 70%;
     margin: auto;
+}
+
+.part-vision {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 30rem;
+
+}
+
+///LEGAL///
+.part-legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0; 
+    background-color: var(--color-primary-text);  
+    
+    &--text {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--pure-white);
+
+
+    }
 }
