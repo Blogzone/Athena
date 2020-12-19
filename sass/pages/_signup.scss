@@ -1,4 +1,4 @@
-.login-container {
+.signup-container {
     max-width: 100rem;
     background-color: var(--pure-white);
     box-shadow: var(--shadow-dark);
@@ -9,8 +9,8 @@
     
 }
 
-.sign-in-container {
-    flex: 0 0 50%;
+.sign-up-container {
+    flex: 1;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -18,8 +18,8 @@
     align-items: center;
 }
 
-.overlay {
-    flex: 1;
+.signup__overlay {
+    flex: 0 0 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,8 +29,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 
     &-panel {
         display: flex;
@@ -52,7 +52,7 @@
             font-size: 2rem;
             font-weight: 400;
             color: var(--pure-white);
-            margin-bottom: 11rem;
+            margin-bottom: 10rem;
         }
 
         &__btn {
@@ -73,7 +73,7 @@
 
 }
 
-.login {
+.signup {
     display: flex;
     flex-direction: column;
     justify-content: center;

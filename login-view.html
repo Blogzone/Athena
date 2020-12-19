@@ -13,19 +13,23 @@
 </head>
 <body>
     <div class="login-container">
-        <div class="form-container sign-in-container">
+        <div class="sign-in-container">
             <form class="login" action="#">
                 <h1 class="login__text">Sign In</h1>
                 <input class="login__username" type="username" name="username" placeholder="username">
 	            <input class="login__password" type="password" name="password" placeholder="Password">
-                <button class="login__btn">Sign In</button>
+                <a href="index.html">
+                    <button class="login__btn">Sign In</button>
+                </a>
             </form>
         </div>
         <div class="overlay">
             <div class="overlay-panel overlay-right">
-                <h1>Hey there!</h1>
-                <p>Join today and start posting your thoughts</p>
-                <button class="signup">Sign Up</button>
+                <h1 class="overlay-panel--primary">Hey there!</h1>
+                <p class="overlay-panel--secondary">Join today and start posting your thoughts</p>
+                <a href="signup-view.html">
+                    <button class="overlay-panel__btn">Sign Up</button>
+                </a>
             </div>
         </div>
     </div>
