@@ -47,6 +47,7 @@
             font-weight: 600;
             color: var(--pure-white);
             margin-bottom: 2rem;
+            
         }
         &--secondary {
             font-size: 2rem;
@@ -88,16 +89,11 @@
        font-weight: 600;
        color: var(--color-headline-text);
        margin-bottom: 2.5rem;
+       margin-top: 2.5rem;
 
     }
 
-    & > input {
-        background-color: #eee;
-        border: none;
-        padding: 1.2rem 1.5rem;
-        margin: 2rem 0;
-        width: 100%;
-    }
+    
     &__btn {
         border-radius: 2rem;
         border: 2px solid var(--color-headline-text);
@@ -112,3 +108,42 @@
         cursor: pointer;
     }
 }
+
+.form-control {
+    // background-color: #eee;
+    // border: none;
+    // border: 2px solid #eee;
+    // padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    
+    width: 100%;
+    & > input {
+        background-color: #eee;
+        padding: 1.2rem 1.5rem;
+        border: none;
+        width: 100%;
+        
+
+    }
+    & small {
+        visibility: hidden;
+        float: left;
+        color: var(--color-error);
+        
+    }
+    &.success input {
+        border: 2.5px solid var(--color-success);
+    }
+    &.error input {
+        border: 2.5px solid var(--color-error);
+    }
+    &.error small {
+        visibility: visible;
+        color: var(--color-error);
+    }
+    
+}
+
+
+
+

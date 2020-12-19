@@ -23,18 +23,42 @@
             </div>
         </div>
         <div class="sign-up-container">
-            <form class="signup" action="#">
+            <form class="signup" action="index.html">
                 <h1 class="signup__text">Sign Up</h1>
-                <input class="signup__username" type="username" name="username" placeholder="johnDOE">
-                <input class="signup__email" type="email" name="email" placeholder="johndoe@gmail.com">
-                <input class="signup__phoneno" type="number" name="phoneno" placeholder="Phone no">
-                <input class="signup__password" type="password" name="password" placeholder="Password">
-	            <input class="signup__confirm-password" type="password" name="password" placeholder="Confirm Password">
-                <button class="signup__btn">Sign Up</button>
+                <div class="form-control">
+                    <input class="signup__username" type="username" name="username" placeholder="johnDOE"> 
+                    <small>Error Message</small>                   
+                </div>
+                
+                <div class="form-control">
+                    <input class="signup__email" type="email" name="email" placeholder="johndoe@gmail.com">
+                    <small>Error Message</small>
+                </div>
+                
+                <div class="form-control">
+                    <input class="signup__phoneno" type="number" name="phoneno" placeholder="Phone no">
+                    <small>Error Message</small>
+                </div>
+                
+                <div class="form-control">
+                    <input class="signup__password" type="password" name="password" placeholder="Password">
+                    <small>Error Message</small>
+                </div>
+                
+                <div class="form-control">
+                    <input class="signup__confirm-password" type="password" name="password" placeholder="Confirm Password">
+                    <small>Error Message</small>
+                </div>    
+                
+	            
+                <a href="index.html">
+                    <button class="signup__btn">Sign Up</button>
+                </a>
             </form>
         </div>
         
     </div>
     
+    <script src="./js/signup.js"></script>
 </body>
 </html>
