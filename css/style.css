@@ -232,8 +232,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-hover);
-  background-image: url("../../img/overlay.jpg");
+  background-image: url("../img/overlay.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -327,8 +326,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-hover);
-  background-image: url("../../img/overlay.jpg");
+  background-image: url("../img/overlay.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
