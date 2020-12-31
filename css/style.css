@@ -140,11 +140,10 @@ body {
   border-bottom: 1px solid var(--Grey-light-2); }
 
 .latest-blogs {
-  flex: 0 0 55%;
+  flex: 0 0 60%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-right: 2rem; }
+  justify-content: space-between; }
   .latest-blogs__blog {
     padding: 5.3rem;
     background-color: var(--pure-white);
@@ -162,6 +161,8 @@ body {
   display: flex;
   flex-direction: column;
   max-height: 80%; }
+  .card-topic__link {
+    text-decoration: none; }
   .card-topic:not(:last-child) {
     margin-right: 2rem; }
   .card-topic__img1 {
@@ -321,6 +322,7 @@ body {
   background-color: var(--pure-white);
   padding: 4rem 2rem;
   display: flex;
+  justify-content: center;
   min-height: 50rem;
   border-bottom: 1px solid var(--Grey-light-2); }
 
@@ -341,6 +343,33 @@ body {
   display: flex;
   padding: 2rem 2rem;
   width: 100%; }
+
+.bg-white {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80rem;
+  padding: 4rem 4rem; }
+  .hero__logo {
+    height: 10rem;
+    margin-bottom: 4rem; }
+  .hero__text {
+    font-weight: 600;
+    font-size: 4rem;
+    color: #333333;
+    margin-bottom: 4rem;
+    text-align: center; }
+  .hero__subtext {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 4rem;
+    text-align: center; }
 
 .login-container {
   max-width: 100rem;
