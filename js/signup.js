@@ -63,7 +63,7 @@ function validateForm() {
     }
 
     if(!validPhoneNo(phonenoValue)) {
-        showError(phoneno, 'Length of phone number should be 10');
+        showError(phoneno, 'Length of phone number should be 10 and should consist of only numbers');
     } else {
         showSuccess(phoneno);
     }
