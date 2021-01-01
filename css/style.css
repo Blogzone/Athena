@@ -756,3 +756,11 @@ input:focus {
   transition: all 0.5s linear;
   box-shadow: inset 0px 0px 10px var(--color-hover);
 }
+
+.disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
