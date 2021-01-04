@@ -6,6 +6,32 @@ const password = document.querySelector('.signup__password');
 const confirmPassword = document.querySelector('.signup__confirm-password');
 // const btn = document.querySelector('.signup__btn');
 
+var strength = {
+    0: "Worst",
+    1: "Bad",
+    2: "Weak",
+    3: "Good",
+    4: "Strong"
+  };
+  var password1 = document.querySelector('.signup__password');
+  var meter = document.getElementById('password-strength-meter');
+  var text = document.getElementById('password-strength-text');
+  
+  password.addEventListener('input', function() {
+    var val = password1.value;
+    var result = zxcvbn(val);
+  
+    // Update the password strength meter
+    meter.value = result.score;
+  
+    // Update the text indicator
+    if (val !== "") {
+      text.innerHTML = "Strength: " + strength[result.score]; 
+    } else {
+      text.innerHTML = "";
+    }
+  });
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -31,13 +57,13 @@ function validateForm() {
         showError(email, 'Email cannot be blank');
         
     } else if(!validEmail(emailValue)) {
-        showError(email, 'Email is not Valid');
+        showError(email, 'Email format invalid');
     } else {
         showSuccess(email);
     }
 
     if(!validPhoneNo(phonenoValue)) {
-        showError(phoneno, 'Phone no is not valid');
+        showError(phoneno, 'Length of phone number should be 10 and should consist of only numbers');
     } else {
         showSuccess(phoneno);
     }
@@ -59,7 +85,13 @@ function validateForm() {
         showError(confirmPassword, 'Password does not match');
 
     } else {
-        showSuccess(confirmPassword);
+        if(!validPassword(passwordValue)) {
+            showError(password, 'Password is not Valid');
+            
+        }
+        else {
+            showSuccess(confirmPassword);
+        }
     }
 
 }
@@ -97,7 +129,7 @@ function validEmail(mail) {
 }
 
 function validPassword(pass) {
-    const re = /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/;
+    const re = /(?=^.{8,16}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/;
     return re.test(pass);
 }
 

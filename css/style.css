@@ -53,6 +53,18 @@ body {
   color: var(--color-primary-text);
   min-height: 100vh; }
 
+.disable-select {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */ }
+
 .masthead__text {
   font-size: 8rem;
   font-weight: 600;
@@ -302,6 +314,12 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--pure-white); }
+
+input:hover,
+input:focus {
+  outline: 0;
+  transition: all 0.5s linear;
+  box-shadow: inset 0px 0px 10px var(--color-hover); }
 
 .container {
   max-width: 100%;
@@ -573,3 +591,45 @@ body {
   .form-control.error small {
     visibility: visible;
     color: var(--color-error); }
+
+meter {
+  /* Reset the default appearance */
+  margin: 0 auto 1rem;
+  width: 100%;
+  height: 0.8rem;
+  /* Applicable only to Firefox */
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1); }
+
+meter::-webkit-meter-bar {
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1); }
+
+meter[value="0"]::-webkit-meter-optimum-value,
+meter[value="1"]::-webkit-meter-optimum-value {
+  background: red; }
+
+meter[value="2"]::-webkit-meter-optimum-value {
+  background: yellow; }
+
+meter[value="3"]::-webkit-meter-optimum-value {
+  background: orange; }
+
+meter[value="4"]::-webkit-meter-optimum-value {
+  background: green; }
+
+meter[value="1"]::-moz-meter-bar,
+meter[value="1"]::-moz-meter-bar {
+  background: red; }
+
+meter[value="2"]::-moz-meter-bar {
+  background: yellow; }
+
+meter[value="3"]::-moz-meter-bar {
+  background: orange; }
+
+meter[value="4"]::-moz-meter-bar {
+  background: green; }
+
+meter::-webkit-meter-optimum-value {
+  transition: width 0.4s ease-out; }
