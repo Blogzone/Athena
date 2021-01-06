@@ -40,6 +40,18 @@
 
 }
 
+.blog-content {
+    margin: 0 9rem;
+    padding: 4rem 1rem;
+    background-color: var(--pure-white);
+    // padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 50rem;
+    border-bottom: 1px solid var(--Grey-light-2);    
+
+}
+
 .page-footer {   
     
     
