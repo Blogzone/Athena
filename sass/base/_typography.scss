@@ -3,6 +3,11 @@
     font-weight: 600;
     color: var(--pure-white); 
 }
+.bg-image__text {
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--pure-white); 
+}
 .masthead-blog__text {
     font-size: 4rem;
     font-weight: 600;
@@ -45,11 +50,11 @@
 }
 .blog-content__text {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 500;
     color: var(--pure-black);
     text-align: left;
-    line-height: 1.95rem;
+    line-height: 3.2rem;
 
 }
 

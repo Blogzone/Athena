@@ -34,7 +34,11 @@
         padding: 0 2rem;       
         height: 100%;
         display: flex;
-        align-items: center;       
+        align-items: center;    
+        
+        &--active {
+            color: var(--color-hover);
+        }
         
     }
     &__link:hover {
