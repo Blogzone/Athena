@@ -180,6 +180,23 @@
     // border-radius: 2rem;
     
     flex: 1;
+    &__manage {
+        padding: 5.3rem;
+       
+        background-color: var(--pure-white);
+        box-shadow: var(--shadow-dark);
+        border-radius: 2rem;
+        margin-bottom: 2rem;  
+
+        &--list {
+            font-size: 1.7rem;
+            font-weight: 600;    
+            
+            color: var(--color-primary-text);
+        }
+        
+
+    }
 }
 
 /////////TOPICS//////

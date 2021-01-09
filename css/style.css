@@ -235,6 +235,16 @@ body {
 
 .user-tools {
   flex: 1; }
+  .user-tools__manage {
+    padding: 5.3rem;
+    background-color: var(--pure-white);
+    box-shadow: var(--shadow-dark);
+    border-radius: 2rem;
+    margin-bottom: 2rem; }
+    .user-tools__manage--list {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--color-primary-text); }
 
 .card-topic {
   background-color: var(--Grey-light-2);
@@ -390,6 +400,18 @@ input:focus {
   outline: 0;
   transition: all 0.5s linear;
   box-shadow: inset 0px 0px 10px var(--color-hover); }
+
+.form-control textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #a1a1a1;
+  border-radius: 2px; }
+
+.create-blog {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .btn {
   display: inline-block;

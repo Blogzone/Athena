@@ -20,8 +20,8 @@
                 </div>
                 <nav class="navbar">
                     <ul class="user-nav">
-                        <li class="user-nav__item user-nav__item--active">
-                            <a href="#" class="user-nav__link">
+                        <li class="user-nav__item">
+                            <a href="main.html" class="user-nav__link">
                                 Home
                             </a>
                         </li>
@@ -45,68 +45,38 @@
 
                                 </div>
                             </div>
-                            
-                            
                         </li>
-
                                                 
                     </ul>
                 </nav>
             </header>
-            <div class="masthead">
-                <h1 class="masthead__text">
-                    Welcome Swaroop!
-                </h1>
-            </div>
-
+            
             <div class="content">
-               <main class="latest-blogs">
-                    <h1 class="section-headline">Latest Blogs</h1>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+               <main class="create-blog">
+                    <h1 class="section-headline">Create a Blog</h1>
+                    <form class="blog-form">
+                        <div class="form-control">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title">
                         </div>
-                        <button class="btn" type="submit">Read Blog</button>              
-                                               
-                    </div>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+                        <div class="form-control">
+                            <label for="subtitle">Subtitle</label>
+                            <input type="text" name="subtitle" id="subtitle">
                         </div>
-                        <button class="btn" type="submit">Read Blog</button>
-                    </div>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+                        
+                        <div class="form-control">
+                            <label for="blog">Blog</label>
+                            <textarea name="blog" id="blog" rows="20"></textarea>
                         </div>
-                        <button class="btn" type="submit">Read Blog</button>
-                    </div>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
-                        </div>
-                        <button class="btn" type="submit">Read Blog</button>
-                    </div>
+            
+                        <button class="btn" type="submit">Create</button>
+                    </form>
                     
                     
                     
                </main>
 
-               <div class="user-tools">
-                    <h1 class="section-headline">User tools</h1>
-                    <div class="user-tools__manage">
-                        <ul class="user-tools__manage--list">
-                            <li><a href="add-blog.html">Create a Blog</a></li>
-                            <li><a href="#">My Blogs</a></li>
-                            <li><a href="#">My Account</a></li>
-                            
-                        </ul>
-                    </div>
-               </div>
+               
             </div>
             
 
