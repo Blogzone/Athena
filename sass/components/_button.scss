@@ -15,3 +15,55 @@
     background-color: var(--color-hover);
     color: white;
   }
+
+  .account-info {
+    display: inline-block;
+    padding: 0.25rem 2rem;
+    text-decoration: none;
+    font: inherit;
+    border: 1px solid var(--color-primary-text);
+    color: var(--color-primary-text);
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .rating-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 2rem 2rem;
+    &__votes {
+      font-weight: 500;
+      font-size: 2rem;
+      color: var(--pure-white);
+      background-color: var(--color-hover);
+      padding: 0.7rem 2rem;
+
+    }
+
+    &__btn {
+      
+      border: 2px solid var(--color-headline-text);
+      background-color: var(--pure-white);
+      color: var(--color-headline-text);
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 1.2rem 4.5rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--pure-white);
+        background-color: var(--color-hover);
+        transition: 0.2s;
+      }
+    }
+  }
+
+ 
+
+
