@@ -1,0 +1,69 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+    <body>
+        <div class="container">
+            <%- include('../includes/nav.ejs') %>
+                        <li class="user-nav__item">
+                            <div class="user-nav__dropdown">
+                                <span class="user-nav__user-name">Swaroop Nayak</span>
+                                <div class="user-nav__user-menu">
+                                    <a href="/create-blog">Create Blog</a>
+                                    <a href="#">My Blogs</a>
+                                    <a href="/my-account/1">My Account</a>
+                                    <a href="#">Logout</a>
+
+                                </div>
+                            </div>
+                        </li>
+                                                
+                    </ul>
+                </nav>
+            </header>
+            
+            <div class="content">
+               <main class="latest-blogs">
+                    <h1 class="section-headline">Blogs on Webdev</h1>
+                    <div class="latest-blogs__blog">
+                        <div class="latest-blogs__blogdetails">
+                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
+                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+                        </div>                        
+                        <button class="btn" type="submit">Read Blog</button>                
+                                               
+                    </div>
+                    <div class="latest-blogs__blog">
+                        <div class="latest-blogs__blogdetails">
+                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
+                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+                        </div>                        
+                        <button class="btn" type="submit">Read Blog</button>
+                    </div>
+                    <div class="latest-blogs__blog">
+                        <div class="latest-blogs__blogdetails">
+                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
+                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+                        </div>                        
+                        <button class="btn" type="submit">Read Blog</button>
+                    </div>
+                    <div class="latest-blogs__blog">
+                        <div class="latest-blogs__blogdetails">
+                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
+                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+                        </div>                        
+                        <button class="btn" type="submit">Read Blog</button>
+                    </div>
+                    
+                    
+                    
+               </main>
+
+               
+            </div>
+            
+
+            <%- include('../includes/footer.ejs') %>
+            
+        </div>
+        
+    </body>
+</html>

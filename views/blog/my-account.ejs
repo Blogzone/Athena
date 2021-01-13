@@ -1,0 +1,50 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+    <body>
+        <div class="container">
+            <%- include('../includes/nav.ejs') %>
+                        <li class="user-nav__item">
+                            <div class="user-nav__dropdown">
+                                <span class="user-nav__user-name">Swaroop Nayak</span>
+                                <div class="user-nav__user-menu">
+                                    <a href="/create-blog">Create Blog</a>
+                                    <a href="#">My Blogs</a>
+                                    <a href="/my-account/1">My Account</a>
+                                    <a href="#">Logout</a>
+
+                                </div>
+                            </div>
+                            
+                            
+                        </li>
+
+                                                
+                    </ul>
+                </nav>
+            </header>
+            <div class="masthead">
+                <h1 class="masthead__text">
+                   Account Settings
+                </h1>
+                <a href="#" class="account-info">Edit</a>
+            </div>
+
+            <div class="myaccount-content">
+               <div class="stats">
+                   <h3 class="stats__desc">Number of blogs published</h3>
+                   <h1 class="stats__value">5</h1>
+               </div>
+               <div class="stats">
+                   <h3 class="stats__desc">Number of upvotes</h3>
+                   <h1 class="stats__value">100</h1>
+               </div>
+
+            </div>
+            
+
+            <%- include('../includes/footer.ejs') %>
+            
+        </div>
+        
+    </body>
+</html>
