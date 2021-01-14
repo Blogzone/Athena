@@ -13,7 +13,7 @@ router.get('/my-blogs/:userId');
 
 router.get('/create-blog', blogController.getCreateBlog);
 
-router.get('/blogs/:blogId', blogController.getBlog);
+router.get('/blogs/:articleId', blogController.getBlog);
 
 router.post('/create-blog', blogController.postCreateBlog);
 

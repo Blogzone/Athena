@@ -54,10 +54,20 @@ exports.postCreateBlog = (req, res, next) => {
 };
 
 exports.getBlog = (req, res, next) => {
-    res.render('blog/blog', {
-        pageTitle: 'Title of the blog goes here',
-        path: '/blogs'
+    const blogId = req.params.articleId;
+    Blog.findById(blogId)
+    .then(article => {
+        res.render('blog/blog', {
+            blog: article,
+            pageTitle: article.title,
+            path: '/blogs'
+        });
+    })
+    .catch(err => {
+        console.log(err);
     });
+
+    
 };
 
 exports.getmyAccount = (req, res, next) => {

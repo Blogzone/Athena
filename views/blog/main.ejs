@@ -39,7 +39,7 @@
                                 <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on <%= blog.publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blog.topic %></span></p>
                             </div>
                             <div class="latest-blogs__blogaction">
-                                <a href="/blogs/12345" class="btn">Read Blog</a>
+                                <a href="/blogs/<%= blog._id %>" class="btn">Read Blog</a>
                                 
                             </div>
                                           
