@@ -232,7 +232,8 @@ body {
   flex: 0 0 60%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  
+  
   margin-right: 2rem; }
   .latest-blogs__blog {
     padding: 5.3rem;
@@ -243,7 +244,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end; }
-
+  .latest-blogs__blogdetails {
+    flex: 8;
+    margin-right: 2rem;  }
+  .latest-blogs__blogaction {
+    flex: 1;
+    align-self: flex-end;  }
+  
 .user-tools {
   flex: 1; }
   .user-tools__manage {
@@ -256,6 +263,10 @@ body {
       font-size: 1.7rem;
       font-weight: 600;
       color: var(--color-primary-text); }
+    .user-tools__manage--list > li > a {
+      text-decoration: none; }
+      .user-tools__manage--list > li > a:hover {
+        color: var(--color-hover); }
 
 .card-topic {
   background-color: var(--Grey-light-2);

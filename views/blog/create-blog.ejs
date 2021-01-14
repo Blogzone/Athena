@@ -23,14 +23,25 @@
             <div class="content">
                <main class="create-blog">
                     <h1 class="section-headline">Create a Blog</h1>
-                    <form class="blog-form">
+                    <form class="blog-form" action="/create-blog" method="POST">
                         <div class="form-control">
                             <label for="title">Title</label>
-                            <input type="text" name="title" id="title">
+                            <input required type="text" name="title" id="title">
                         </div>
                         <div class="form-control">
                             <label for="subtitle">Subtitle</label>
-                            <input type="text" name="subtitle" id="subtitle">
+                            <input required type="text" name="subtitle" id="subtitle">
+                        </div>
+                        <div class="form-control">
+                            <label for="topic">Topic</label>
+                            <select required id="topic" name="topic">
+                                <option value="Webdev">Webdev</option>
+                                <option value="Appdev">Appdev</option>
+                                <option value="ML">ML</option>
+                                <option value="Systems">Systems</option>
+                                <option value="Gamedev">Gamedev</option>
+                                <option value="Cybersecurity">Cybersecurity</option>
+                            </select>
                         </div>
                         
                         <div class="form-control">

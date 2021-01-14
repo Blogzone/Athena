@@ -2,6 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -18,4 +19,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(blogRoutes);
 
 
-app.listen(3000);
+mongoose.connect('mongodb+srv://abhishek:QTJ81lgkraQ5emOR@cluster0.9z86w.mongodb.net/athena?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true})
+.then(result => {
+    console.log('CONNECTED!');
+    app.listen(3000);
+    
+
+}).catch(err => {
+    console.log(err);
+});
+
+

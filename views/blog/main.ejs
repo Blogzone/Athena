@@ -30,38 +30,27 @@
 
             <div class="content">
                <main class="latest-blogs">
+                <% if (blogs.length > 0) { %>
                     <h1 class="section-headline">Latest Blogs</h1>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
+                    <% for (let blog of blogs) { %>
+                        <div class="latest-blogs__blog">
+                            <div class="latest-blogs__blogdetails">
+                                <h2 class="latest-blogs__blog--title"><%= blog.title %></h2>
+                                <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on <%= blog.publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blog.topic %></span></p>
+                            </div>
+                            <div class="latest-blogs__blogaction">
+                                <a href="/blogs/12345" class="btn">Read Blog</a>
+                                
+                            </div>
+                                          
+                                                
                         </div>
-                        <button class="btn" type="submit">Read Blog</button>              
-                                               
-                    </div>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
-                        </div>
-                        <button class="btn" type="submit">Read Blog</button>
-                    </div>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
-                        </div>
-                        <button class="btn" type="submit">Read Blog</button>
-                    </div>
-                    <div class="latest-blogs__blog">
-                        <div class="latest-blogs__blogdetails">
-                            <h2 class="latest-blogs__blog--title">Blog Title</h2>
-                            <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on 07/12/2020</p>
-                        </div>
-                        <a href="/blogs/12345" class="btn">Read Blog</a>
-                        
-                    </div>
-                    
+                    <% } %>
+
+                <% } else { %>
+                    <h1 class="section-headline">No blogs yet, Start Creating Blogs!</h1>
+                <% } %>
+                                       
                     
                     
                </main>

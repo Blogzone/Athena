@@ -15,7 +15,7 @@ router.get('/create-blog', blogController.getCreateBlog);
 
 router.get('/blogs/:blogId', blogController.getBlog);
 
-router.post('/create-blog');
+router.post('/create-blog', blogController.postCreateBlog);
 
 router.get('/topics', blogController.getTopics);
 
