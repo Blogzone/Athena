@@ -21,8 +21,16 @@ router.get('/topics', blogController.getTopics);
 
 router.get('/topics/webdev', blogController.getWebdev);
 
+router.get('/my-blogs/:userId', blogController.getmyBlogs);
 
+router.post('/my-blogs/delete-blog', blogController.postDeleteBlogs);
+
+router.get('/my-blogs/edit-blog/:blogId', blogController.getEditBlog);
+
+router.post('/edit-blog', blogController.postEditBlog);
 
 router.get('/my-account/:userId', blogController.getmyAccount);
+
+
 
 module.exports = router;

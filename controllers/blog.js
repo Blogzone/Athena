@@ -1,4 +1,5 @@
 const Blog = require('../models/blog');
+const router = require('../routes/blog');
 
 
 exports.getIndex = (req, res, next) => {
@@ -77,8 +78,83 @@ exports.getmyAccount = (req, res, next) => {
     });
 };
 
+exports.getmyBlogs = (req, res, next) => {
+    Blog.find()
+    .then(articles => {
+        res.render('blog/my-blogs', {
+            blogs: articles,
+            pageTitle: 'My Blogs',
+            path: '/my-blogs'
+        });
+    })
+    .catch(err => {
+        console.log(err);
+    });
+};
+
+exports.postDeleteBlogs = (req, res, next) => {
+    const articleId = req.body.blogId;
+    Blog.findByIdAndRemove(articleId)
+    .then(() => {
+        console.log('BLOG DELETED');
+        res.redirect('/my-blogs/1');
+    })
+    .catch(err => {
+        console.log(err);
+    });
+};
+
+exports.getEditBlog = (req, res, next) => {
+    const editMode = req.query.edit;
+    if(!editMode) {
+        return res.redirect('/');
+    }
+    const articleId = req.params.blogId;
+    Blog.findById(articleId)
+    .then(article => {
+        if(!article) {
+            return res.redirect('/');
+        }
+        res.render('blog/edit-blog', {
+            pageTitle: 'Edit Blog',
+            path: '/my-blog/edit-blog',
+            editing: editMode,
+            blog: article
+        });
+    })
+    .catch(err => {
+        console.log(err);
+    });
+};
+
+exports.postEditBlog = (req, res, next) => {
+    const blogId = req.body.blogId;
+    const updatedTitle = req.body.title;
+    const updatedSubtitle = req.body.subtitle;
+    const updatedTopic = req.body.topic;
+    const updatedblogText = req.body.blog;
+
+    Blog.findById(blogId)
+    .then(blog => {
+        blog.title = updatedTitle;
+        blog.subtitle = updatedSubtitle;
+        blog.topic = updatedTopic;
+        blog.text = updatedblogText;
+        return blog.save();
+    })
+    .then(result => {
+        console.log('UPDATED BLOG');
+        res.redirect('/my-blogs/1');
+    })
+    .catch(err => {
+        console.log(err);
+    });
+
+};
+
 exports.getWebdev = (req, res, next) => {
     res.render('blog/articles', {
         pageTitle: 'Webdev'
     });
 };
+

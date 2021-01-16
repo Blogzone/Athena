@@ -248,8 +248,15 @@ body {
     flex: 8;
     margin-right: 2rem;  }
   .latest-blogs__blogaction {
-    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex: 3;    
     align-self: flex-end;  }
+
+.my-blogs {
+  flex: 0 0 80%;
+  display: flex;
+  flex-direction: column;  }
   
 .user-tools {
   flex: 1; }
@@ -450,6 +457,15 @@ input:focus {
 .btn:active {
   background-color: var(--color-hover);
   color: white; }
+
+.custom-select select {
+  background-color: #eee;
+  padding: 1.2rem 1.5rem;
+  border: none;
+  width: 100%; 
+  
+}
+
 
 .account-info {
   display: inline-block;
