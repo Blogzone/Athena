@@ -9,6 +9,7 @@ exports.getIndex = (req, res, next) => {
             blogs: articles,
             pageTitle: 'Home',
             path: '/',
+            isAuthenticated: req.session.isLoggedIn
 
         });
     })
@@ -21,14 +22,16 @@ exports.getIndex = (req, res, next) => {
 exports.getTopics = (req, res, next) => {
     res.render('blog/topics', {
         pageTitle: 'Topics',
-        path: '/topics'
+        path: '/topics',
+        isAuthenticated: req.session.isLoggedIn
     });
 };
 
 exports.getCreateBlog = (req, res, next) => {
     res.render('blog/create-blog', {
         pageTitle: 'Create-Blog',
-        path: '/create-blog'
+        path: '/create-blog',
+        isAuthenticated: req.session.isLoggedIn
     });
 };
 
@@ -66,7 +69,9 @@ exports.getBlog = (req, res, next) => {
         res.render('blog/blog', {
             blog: article,
             pageTitle: article.title,
-            path: '/blogs'
+            path: '/blogs',
+            isAuthenticated: req.session.isLoggedIn
+
         });
     })
     .catch(err => {
@@ -79,7 +84,8 @@ exports.getBlog = (req, res, next) => {
 exports.getmyAccount = (req, res, next) => {
     res.render('blog/my-account', {
         pageTitle: 'My-Account',
-        path: '/my-account'
+        path: '/my-account',
+        isAuthenticated: req.session.isLoggedIn
     });
 };
 
@@ -90,7 +96,8 @@ exports.getmyBlogs = (req, res, next) => {
         res.render('blog/my-blogs', {
             blogs: articles,
             pageTitle: 'My Blogs',
-            path: '/my-blogs'
+            path: '/my-blogs',
+            isAuthenticated: req.session.isLoggedIn
         });
     })
     .catch(err => {
@@ -129,7 +136,8 @@ exports.getEditBlog = (req, res, next) => {
             pageTitle: 'Edit Blog',
             path: '/my-blog/edit-blog',
             editing: editMode,
-            blog: article
+            blog: article,
+            isAuthenticated: req.session.isLoggedIn
         });
     })
     .catch(err => {
@@ -164,7 +172,8 @@ exports.postEditBlog = (req, res, next) => {
 
 exports.getWebdev = (req, res, next) => {
     res.render('blog/articles', {
-        pageTitle: 'Webdev'
+        pageTitle: 'Webdev',
+        isAuthenticated: req.session.isLoggedIn
     });
 };
 
