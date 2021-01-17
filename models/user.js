@@ -32,6 +32,14 @@ userSchema.methods.addtoMyblogs = function(blog) {
     this.myblogs = updatedMyblogs;
     return this.save();
 
-}
+};
+
+userSchema.methods.removefromMyblogs = function(blogId) {
+    const updatedMyblogs = this.myblogs.blogs.filter(blog => {
+        return blog.articleId.toString() !== blogId.toString();
+    });
+    this.myblogs.blogs = updatedMyblogs;
+    return this.save(); 
+};
 
 module.exports = mongoose.model('User', userSchema);

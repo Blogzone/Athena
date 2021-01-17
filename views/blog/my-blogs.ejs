@@ -27,14 +27,14 @@
                     <% for (let blog of blogs) { %>
                         <div class="latest-blogs__blog">
                             <div class="latest-blogs__blogdetails">
-                                <h2 class="latest-blogs__blog--title"><%= blog.title %></h2>
-                                <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on <%= blog.publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blog.topic %></span></p>
+                                <h2 class="latest-blogs__blog--title"><%= blog.articleId.title %></h2>
+                                <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on <%= blog.articleId.publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blog.articleId.topic %></span></p>
                             </div>                        
                             <div class="latest-blogs__blogaction">
-                                <a href="/blogs/<%= blog._id %>" class="btn">Read Blog</a>
-                                <a href="/my-blogs/edit-blog/<%= blog._id %>?edit=true" class="btn">Edit Blog</a>
+                                <a href="/blogs/<%= blog.articleId._id %>" class="btn">Read Blog</a>
+                                <a href="/my-blogs/edit-blog/<%= blog.articleId._id %>?edit=true" class="btn">Edit Blog</a>
                                 <form action="/my-blogs/delete-blog" method="POST">
-                                    <input type="hidden" value="<%= blog._id %>" name="blogId">
+                                    <input type="hidden" value="<%= blog.articleId._id %>" name="blogId">
                                     <button class="btn" type="submit">Delete Blog</button>
                                 </form>
                             </div>                

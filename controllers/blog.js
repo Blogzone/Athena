@@ -46,7 +46,7 @@ exports.postCreateBlog = (req, res, next) => {
     });
     blog.save().then(blog => {
         return req.user.addtoMyblogs(blog);
-        
+
     })
     .then(result => {
         console.log('Created Blog!');
@@ -84,8 +84,9 @@ exports.getmyAccount = (req, res, next) => {
 };
 
 exports.getmyBlogs = (req, res, next) => {
-    Blog.find()
-    .then(articles => {
+    req.user.populate('myblogs.blogs.articleId').execPopulate()
+    .then(user => {
+        const articles = user.myblogs.blogs;
         res.render('blog/my-blogs', {
             blogs: articles,
             pageTitle: 'My Blogs',
@@ -99,6 +100,7 @@ exports.getmyBlogs = (req, res, next) => {
 
 exports.postDeleteBlogs = (req, res, next) => {
     const articleId = req.body.blogId;
+    req.user.removefromMyblogs(articleId).then(result => console.log("REMOVED FROM MY-BLOGS"));    
     Blog.findByIdAndRemove(articleId)
     .then(() => {
         console.log('BLOG DELETED');
@@ -107,6 +109,9 @@ exports.postDeleteBlogs = (req, res, next) => {
     .catch(err => {
         console.log(err);
     });
+    
+    
+
 };
 
 exports.getEditBlog = (req, res, next) => {
