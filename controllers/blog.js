@@ -41,12 +41,17 @@ exports.postCreateBlog = (req, res, next) => {
         title: title,
         subtitle: subtitle,
         topic: topic,
-        text: blogText
+        text: blogText,
+        userId: req.user
     });
-    blog.save()
+    blog.save().then(blog => {
+        return req.user.addtoMyblogs(blog);
+        
+    })
     .then(result => {
         console.log('Created Blog!');
         res.redirect('/');
+        
     })
     .catch(err => {
         console.log(err);
