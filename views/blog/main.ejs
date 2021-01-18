@@ -3,6 +3,7 @@
     <body>
         <div class="container">
             <%- include('../includes/nav.ejs') %>
+            <% if(isAuthenticated) { %>
                         <li class="user-nav__item">
                             <div class="user-nav__dropdown">
                                 <span class="user-nav__user-name">Swaroop Nayak</span>
@@ -10,13 +11,15 @@
                                     <a href="/create-blog">Create Blog</a>
                                     <a href="/my-blogs/1">My Blogs</a>
                                     <a href="/my-account/1">My Account</a>
-                                    <a href="#">Logout</a>
+                                    <form action="/logout" method="POST">
+                                        <button type="submit">Logout</button>
+                                    </form>
+                                    
 
                                 </div>
-                            </div>
+                            </div>                            
                             
-                            
-                        </li>
+                        </li>            
 
                                                 
                     </ul>
@@ -68,7 +71,51 @@
                </div>
             </div>
             
+            <% } else { %>
+                <li class="user-nav__item">
+                    <a href="/login" class="user-nav__link">
+                        Login/Sign Up
+                    </a>
+                </li>
+                                        
+                    </ul>
+                </nav>
+            </header>
+            <div class="masthead disable-select">
+                <h1 class="masthead__text">
+                    Create Amazing Posts!
+                </h1>                
+            </div>
 
+            <section class="bg-white">
+                <div class="hero">
+                    <img src="img/feather-pen.png" alt="Athena-logo" class="hero__logo">
+                    <h2 class="hero__text">Bringing you the<br> best of Blogging on campus</h2>
+                    <div class="hero__subtext">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque libero augue, bibendum et ex vitae, pretium consectetur arcu. Morbi varius suscipit pellentesque. Mauris est purus, consectetur eu efficitur quis, blandit luctus dolor. Etiam dapibus malesuada enim, vitae consectetur metus. Ut interdum, arcu quis dapibus posuere, leo elit sagittis justo, non condimentum mi velit at leo. Maecenas neque ante, gravida vitae nibh ac, consequat tempor est. Nunc venenatis tellus at blandit varius. Vestibulum sed efficitur lacus, a luctus eros.
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="bg-image">
+                <h2 class="bg-image__text">
+                    We love your ideas and perspectives
+                </h2>
+            </section>
+
+            <section class="bg-white">
+                <div class="hero">
+                
+                    <h2 class="hero__text">A living network of curious minds.</h2>
+                    <div class="hero__subtext">
+                        Anyone can write on Athena. Thought-leaders, artists, experts, and individuals with unique perspectives share their thinking here. You’ll find pieces by independent writers from around the campus, stories we feature and leading authors, and smart takes on our own suite of blogs and publications.
+                    </div>
+
+                </div>
+            </section>
+
+            <% } %>
             <%- include('../includes/footer.ejs') %>
             
         </div>
