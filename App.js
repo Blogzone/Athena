@@ -46,22 +46,7 @@ app.use(authRoutes);
 
 mongoose.connect(mongoURL, { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false})
 .then(result => {
-    console.log('CONNECTED!');
-
-    User.findOne().then(user => {
-        if(!user) {
-            const user = new User({
-                name: 'Swaroop',
-                email: 'swaroop@test.com',
-                myblogs: {
-                    blogs: []
-                }        
-            });
-            user.save();
-
-        }
-    });
-    
+    console.log('CONNECTED!');   
     app.listen(3000);    
 
 }).catch(err => {
