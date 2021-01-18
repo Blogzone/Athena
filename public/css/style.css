@@ -160,6 +160,7 @@ body {
     height: 100%;
     display: flex;
     align-items: center; }
+  
     .user-nav__item--active {
       color: var(--color-hover); }
   .user-nav__link:hover {
@@ -173,8 +174,9 @@ body {
   .user-nav__user-menu {
     display: none;
     position: absolute;
+    right: 0;    
     background-color: #f9f9f9;
-    min-width: 16rem;
+    min-width: 13rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1; }
     .user-nav__user-menu a {
@@ -182,9 +184,17 @@ body {
       padding: 1.2rem 1.6rem;
       text-decoration: none;
       display: block;
-      text-align: left; }
+      text-align: right; }
       .user-nav__user-menu a:hover {
         background-color: #ddd; }
+    .user-nav__user-menu form > a {
+      color: var(--color-hover);
+      padding: 1.2rem 1.6rem;
+      text-decoration: none;
+      display: block;
+      text-align: right;
+     }
+    
   .user-nav__dropdown:hover .user-nav__user-menu {
     display: block; }
 

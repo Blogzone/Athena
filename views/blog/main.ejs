@@ -4,22 +4,7 @@
         <div class="container">
             <%- include('../includes/nav.ejs') %>
             <% if(isAuthenticated) { %>
-                        <li class="user-nav__item">
-                            <div class="user-nav__dropdown">
-                                <span class="user-nav__user-name">Swaroop Nayak</span>
-                                <div class="user-nav__user-menu">
-                                    <a href="/create-blog">Create Blog</a>
-                                    <a href="/my-blogs/1">My Blogs</a>
-                                    <a href="/my-account/1">My Account</a>
-                                    <form action="/logout" method="POST">
-                                        <button type="submit">Logout</button>
-                                    </form>
-                                    
-
-                                </div>
-                            </div>                            
-                            
-                        </li>            
+                        <%- include('../includes/user-menu.ejs') %>            
 
                                                 
                     </ul>
@@ -27,7 +12,7 @@
             </header>
             <div class="masthead">
                 <h1 class="masthead__text">
-                    Welcome Swaroop!
+                    Welcome <%= user.name %>!
                 </h1>
             </div>
 
@@ -63,8 +48,8 @@
                     <div class="user-tools__manage">
                         <ul class="user-tools__manage--list">
                             <li><a href="/create-blog">Create a Blog</a></li>
-                            <li><a href="/my-blogs/1">My Blogs</a></li>
-                            <li><a href="/my-account/1">My Account</a></li>
+                            <li><a href="/my-blogs/<%= user._id %>">My Blogs</a></li>
+                            <li><a href="/my-account/<%= user._id %>">My Account</a></li>
                             
                         </ul>
                     </div>

@@ -3,20 +3,7 @@
     <body>
         <div class="container">
             <%- include('../includes/nav.ejs') %>
-                        <li class="user-nav__item">
-                            <div class="user-nav__dropdown">
-                                <span class="user-nav__user-name">Swaroop Nayak</span>
-                                <div class="user-nav__user-menu">
-                                    <a href="/create-blog">Create Blog</a>
-                                    <a href="/my-blogs/1">My Blogs</a>
-                                    <a href="/my-account/1">My Account</a>
-                                    <a href="#">Logout</a>
-
-                                </div>
-                            </div>
-                            
-                            
-                        </li>
+                        <%- include('../includes/user-menu.ejs') %>
 
                                                 
                     </ul>
