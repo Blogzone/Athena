@@ -6,7 +6,8 @@ exports.getLogin = (req, res, next) => {
     res.render('auth/login', {
         path: '/login',
         pageTitle: 'Sign In',
-        isAuthenticated: false
+        isAuthenticated: false,
+        errorFlash: req.flash('error')
     });
 };
 
@@ -14,7 +15,8 @@ exports.getSignup = (req, res, next) => {
     res.render('auth/signup', {
         path: '/signup',
         pageTitle: 'Signup',
-        isAuthenticated: false
+        isAuthenticated: false,
+        errorFlash: req.flash('error')
     });
 };
 
@@ -24,6 +26,7 @@ exports.postLogin = (req, res, next) => {
     User.findOne({email: email})
     .then(user => {
         if(!user) {
+            req.flash('error', 'Invalid email or password.');
             return res.redirect('/login');
 
         }
@@ -39,6 +42,7 @@ exports.postLogin = (req, res, next) => {
                 });
                 
             }
+            req.flash('error', 'Invalid email or password.');
             res.redirect('/login')
         })
         .catch(err => {
@@ -63,6 +67,7 @@ exports.postSignup = (req, res, next) => {
     User.findOne({email: email})
     .then(userDoc => {
         if(userDoc) {
+            req.flash('error', 'There is already an account associated with this email, Please choose a different email or login with the existing one.');
             return res.redirect('/signup');
 
         }
