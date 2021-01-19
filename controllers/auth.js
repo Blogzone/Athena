@@ -1,6 +1,13 @@
 const bcrypt = require('bcryptjs');
 
 const User = require('../models/user');
+const mailtokens = require('../util/mail');
+
+const mailjet = require ('node-mailjet')
+
+.connect(mailtokens.API_KEY, mailtokens.API_SECRET);
+
+
 
 exports.getLogin = (req, res, next) => {
     res.render('auth/login', {
@@ -86,7 +93,38 @@ exports.postSignup = (req, res, next) => {
         })
         .then(result => {
             res.redirect('/login');
-        })
+            const request = mailjet
+                .post("send", {'version': 'v3.1'})
+                .request({
+                "Messages":[
+                    {
+                    "From": {
+                        "Email": "abhishekmisar2000@gmail.com",
+                        "Name": "Abhishek"
+                    },
+                    "To": [
+                        {
+                        "Email": email,
+                        "Name": username
+                        }
+                    ],
+                    "Subject": "Welcome to Athena",
+                    "TextPart": "Successful signup",
+                    "HTMLPart": `<h1>Welcome to Athena! ${username}</h1><br /><h2>Anyone can write on Athena. Thought-leaders, artists, experts, and individuals with unique perspectives share their thinking here. You’ll find pieces by independent writers from around the campus, stories we feature and leading authors, and smart takes on our own suite of blogs and publications.</h2>!`,
+                    "CustomID": "AppGettingStartedTest"
+                    }
+                ]
+                })
+                request
+                .then((result) => {
+                    console.log(result.body)
+                })
+                .catch((err) => {
+                    console.log(err.statusCode)
+                })
+            
+            
+        });
         
 
     })

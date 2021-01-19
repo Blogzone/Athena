@@ -29,6 +29,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.11.11"
+    "mongoose": "^5.11.11",
+    "node-mailjet": "^3.3.1"
   }
 }

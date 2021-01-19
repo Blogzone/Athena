@@ -9,7 +9,6 @@ const flash = require('connect-flash');
 
 const mongoURL = require('./util/config');
 
-const User = require('./models/user'); 
 
 const app = express();
 const store = new MongoDBStore({
@@ -48,7 +47,7 @@ app.use(authRoutes);
 
 mongoose.connect(mongoURL, { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false})
 .then(result => {
-    console.log('CONNECTED!');   
+    console.log('CONNECTED!');     
     app.listen(3000);    
 
 }).catch(err => {
