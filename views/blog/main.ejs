@@ -20,14 +20,14 @@
                <main class="latest-blogs">
                 <% if (blogs.length > 0) { %>
                     <h1 class="section-headline">Latest Blogs</h1>
-                    <% for (let blog of blogs) { %>
+                    <% for (let i = blogs.length - 1; i>=0; i--) { %>
                         <div class="latest-blogs__blog">
                             <div class="latest-blogs__blogdetails">
-                                <h2 class="latest-blogs__blog--title"><%= blog.title %></h2>
-                                <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on <%= blog.publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blog.topic %></span></p>
+                                <h2 class="latest-blogs__blog--title"><%= blogs[i].title %></h2>
+                                <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;"><%= blogs[i].userId.name %></span> on <%= blogs[i].publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blogs[i].topic %></span></p>
                             </div>
                             <div class="latest-blogs__blogaction">
-                                <a href="/blogs/<%= blog._id %>" class="btn">Read Blog</a>
+                                <a href="/blogs/<%= blogs[i]._id %>" class="btn">Read Blog</a>
                                 
                             </div>
                                           

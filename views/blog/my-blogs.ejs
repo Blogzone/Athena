@@ -17,7 +17,7 @@
                         <div class="latest-blogs__blog">
                             <div class="latest-blogs__blogdetails">
                                 <h2 class="latest-blogs__blog--title"><%= blog.articleId.title %></h2>
-                                <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on <%= blog.articleId.publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blog.articleId.topic %></span></p>
+                                <p class="latest-blogs__blog--info">Posted by <span style="font-weight: 600;"><%= user.name %></span> on <%= blog.articleId.publishedAt.toLocaleDateString() %> in <span style="font-weight:600;"><%= blog.articleId.topic %></span></p>
                             </div>                        
                             <div class="latest-blogs__blogaction">
                                 <a href="/blogs/<%= blog.articleId._id %>" class="btn">Read Blog</a>

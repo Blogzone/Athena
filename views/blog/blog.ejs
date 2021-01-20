@@ -14,7 +14,7 @@
                         <%= blog.title %>
                     </h1>
                     <h2 class = "masthead-blog__subtext"><%= blog.subtitle %></h2>
-                    <h3 class = "masthead-blog__author">Posted by <span style="font-weight: 600;">Swaroop Nayak</span> on <%= blog.publishedAt.toLocaleDateString() %> in <span style="font-weight: 600;"><%= blog.topic %></span></h2>
+                    <h3 class = "masthead-blog__author">Posted by <span style="font-weight: 600;"><%= blog.userId.name %></span> on <%= blog.publishedAt.toLocaleDateString() %> in <span style="font-weight: 600;"><%= blog.topic %></span></h2>
                 </div>
                 
             </div>

@@ -3,13 +3,14 @@ const router = require('../routes/blog');
 
 
 exports.getIndex = (req, res, next) => {
-    Blog.find()
-    .then(articles => {
+    Blog.find().populate({path:'userId', select:'name' })
+    .then(articles => {          
         res.render('blog/main', {
             blogs: articles,
             pageTitle: 'Home',
             path: '/',
             isAuthenticated: req.session.isLoggedIn,
+            
             user: req.user
 
         });
@@ -67,7 +68,7 @@ exports.postCreateBlog = (req, res, next) => {
 
 exports.getBlog = (req, res, next) => {
     const blogId = req.params.articleId;
-    Blog.findById(blogId)
+    Blog.findById(blogId).populate('userId')
     .then(article => {
         res.render('blog/blog', {
             blog: article,
