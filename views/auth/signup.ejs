@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" type="image/png" href="img/feather-pen.png">
-    <title>Athena &mdash; Sign Up</title>
+<%- include('../includes/head.ejs') %>
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
 <body>
@@ -17,14 +7,17 @@
             <div class="signup__overlay-panel overlay-right disable-select">
                 <h1 class="signup__overlay-panel--primary">Welcome back!</h1>
                 <p class="signup__overlay-panel--secondary">Sign In and continue posting your thoughts</p>
-                <a href="login-view.html">
+                <a href="/login">
                     <button class="signup__overlay-panel__btn">Sign In</button>
                 </a>
             </div>
         </div>
         <div class="sign-up-container">
-            <form class="signup" action="index.html">
+            <form class="signup" action="/signup" method="POST">
                 <h1 class="signup__text">Sign Up</h1>
+                <% if(errorFlash) { %>
+                    <div class="signup__user-feedback"><h4 style="color: #ff443a;"><%= errorFlash %></h4></div>
+                <% } %>
                 <div class="form-control">
                     <input class="signup__username" type="username" name="username" placeholder="johnDOE"> 
                     <small>Error Message</small>                   
@@ -48,20 +41,20 @@
                 </div>
                 
                 <div class="form-control">
-                    <input class="signup__confirm-password" type="password" name="password" placeholder="Confirm Password">
+                    <input class="signup__confirm-password" type="password" name="confirmpassword" placeholder="Confirm Password">
                     <small>Error Message</small>
                 </div>    
                 
 	            
-                <a href="main.html">
-                    <button class="signup__btn disable-select">Sign Up</button>
-                </a>
+                
+                <button class="signup__btn" type="submit">Sign Up</button>
+                
                 <button class="signup__btn disable-select" onClick="window.location.reload();">Refresh</button>
             </form>
         </div>
         
     </div>
     
-    <script src="./js/signup.js"></script>
+    <!-- <script src="/js/signup.js"></script> -->
 </body>
 </html>

@@ -5,10 +5,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
+const flash = require('connect-flash');
+
+const User = require('./models/user');
 
 const mongoURL = require('./util/config');
 
-const User = require('./models/user'); 
 
 const app = express();
 const store = new MongoDBStore({
@@ -25,6 +27,7 @@ const authRoutes = require('./routes/auth');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'aSecretHashforsigning', resave: false, saveUninitialized: false, store: store}));
+app.use(flash());
 
 app.use((req, res, next) => {
     if(!req.session.user) {
@@ -46,22 +49,7 @@ app.use(authRoutes);
 
 mongoose.connect(mongoURL, { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false})
 .then(result => {
-    console.log('CONNECTED!');
-
-    User.findOne().then(user => {
-        if(!user) {
-            const user = new User({
-                name: 'Swaroop',
-                email: 'swaroop@test.com',
-                myblogs: {
-                    blogs: []
-                }        
-            });
-            user.save();
-
-        }
-    });
-    
+    console.log('CONNECTED!');     
     app.listen(3000);    
 
 }).catch(err => {

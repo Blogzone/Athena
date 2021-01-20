@@ -3,13 +3,15 @@ const router = require('../routes/blog');
 
 
 exports.getIndex = (req, res, next) => {
-    Blog.find()
-    .then(articles => {
+    Blog.find().populate({path:'userId', select:'name' })
+    .then(articles => {          
         res.render('blog/main', {
             blogs: articles,
             pageTitle: 'Home',
             path: '/',
-            isAuthenticated: req.session.isLoggedIn
+            isAuthenticated: req.session.isLoggedIn,
+            
+            user: req.user
 
         });
     })
@@ -23,7 +25,8 @@ exports.getTopics = (req, res, next) => {
     res.render('blog/topics', {
         pageTitle: 'Topics',
         path: '/topics',
-        isAuthenticated: req.session.isLoggedIn
+        isAuthenticated: req.session.isLoggedIn,
+        user: req.user
     });
 };
 
@@ -31,7 +34,8 @@ exports.getCreateBlog = (req, res, next) => {
     res.render('blog/create-blog', {
         pageTitle: 'Create-Blog',
         path: '/create-blog',
-        isAuthenticated: req.session.isLoggedIn
+        isAuthenticated: req.session.isLoggedIn,
+        user: req.user
     });
 };
 
@@ -64,13 +68,14 @@ exports.postCreateBlog = (req, res, next) => {
 
 exports.getBlog = (req, res, next) => {
     const blogId = req.params.articleId;
-    Blog.findById(blogId)
+    Blog.findById(blogId).populate('userId')
     .then(article => {
         res.render('blog/blog', {
             blog: article,
             pageTitle: article.title,
             path: '/blogs',
-            isAuthenticated: req.session.isLoggedIn
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
 
         });
     })
@@ -85,7 +90,8 @@ exports.getmyAccount = (req, res, next) => {
     res.render('blog/my-account', {
         pageTitle: 'My-Account',
         path: '/my-account',
-        isAuthenticated: req.session.isLoggedIn
+        isAuthenticated: req.session.isLoggedIn,
+        user: req.user
     });
 };
 
@@ -97,7 +103,8 @@ exports.getmyBlogs = (req, res, next) => {
             blogs: articles,
             pageTitle: 'My Blogs',
             path: '/my-blogs',
-            isAuthenticated: req.session.isLoggedIn
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
         });
     })
     .catch(err => {
@@ -107,11 +114,12 @@ exports.getmyBlogs = (req, res, next) => {
 
 exports.postDeleteBlogs = (req, res, next) => {
     const articleId = req.body.blogId;
-    req.user.removefromMyblogs(articleId).then(result => console.log("REMOVED FROM MY-BLOGS"));    
+    const user = req.user;
+    user.removefromMyblogs(articleId).then(result => console.log("REMOVED FROM MY-BLOGS"));    
     Blog.findByIdAndRemove(articleId)
     .then(() => {
         console.log('BLOG DELETED');
-        res.redirect('/my-blogs/1');
+        res.redirect('/my-blogs/user._id');
     })
     .catch(err => {
         console.log(err);
@@ -137,7 +145,8 @@ exports.getEditBlog = (req, res, next) => {
             path: '/my-blog/edit-blog',
             editing: editMode,
             blog: article,
-            isAuthenticated: req.session.isLoggedIn
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
         });
     })
     .catch(err => {
@@ -151,6 +160,7 @@ exports.postEditBlog = (req, res, next) => {
     const updatedSubtitle = req.body.subtitle;
     const updatedTopic = req.body.topic;
     const updatedblogText = req.body.blog;
+    const user = req.user;
 
     Blog.findById(blogId)
     .then(blog => {
@@ -162,7 +172,7 @@ exports.postEditBlog = (req, res, next) => {
     })
     .then(result => {
         console.log('UPDATED BLOG');
-        res.redirect('/my-blogs/1');
+        res.redirect('/my-blogs/user._id');
     })
     .catch(err => {
         console.log(err);
@@ -173,7 +183,8 @@ exports.postEditBlog = (req, res, next) => {
 exports.getWebdev = (req, res, next) => {
     res.render('blog/articles', {
         pageTitle: 'Webdev',
-        isAuthenticated: req.session.isLoggedIn
+        isAuthenticated: req.session.isLoggedIn,
+        user: req.user
     });
 };
 

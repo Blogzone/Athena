@@ -1,0 +1,16 @@
+<li class="user-nav__item">
+    <div class="user-nav__dropdown">
+        <span class="user-nav__user-name"><%= user.name %></span>
+        <div class="user-nav__user-menu">
+            <a href="/create-blog">Create Blog</a>
+            <a href="/my-blogs/<%= user._id %>">My Blogs</a>
+            <a href="/my-account/<%= user._id %>">My Account</a>
+            <form id="logout-form" action="/logout" method="POST">
+                <a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a>
+            </form>
+            
+
+        </div>
+    </div>                            
+    
+</li>
