@@ -20,6 +20,16 @@ router.get('/topics', isAuth, blogController.getTopics);
 
 router.get('/topics/webdev', isAuth, blogController.getWebdev);
 
+router.get('/topics/appdev', isAuth, blogController.getAppdev);
+
+router.get('/topics/ml', isAuth, blogController.getMl);
+
+router.get('/topics/systems', isAuth, blogController.getSystems);
+
+router.get('/topics/gamedev', isAuth, blogController.getGamedev);
+
+router.get('/topics/cybersecurity', isAuth, blogController.getCybersecurity);
+
 router.get('/my-blogs/:userId', isAuth, blogController.getmyBlogs);
 
 router.post('/my-blogs/delete-blog', isAuth, blogController.postDeleteBlogs);

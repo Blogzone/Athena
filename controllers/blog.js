@@ -1,4 +1,7 @@
+const path = require('path');
 const Blog = require('../models/blog');
+const mongoose = require('mongoose');
+
 const router = require('../routes/blog');
 
 
@@ -22,12 +25,25 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getTopics = (req, res, next) => {
-    res.render('blog/topics', {
-        pageTitle: 'Topics',
-        path: '/topics',
-        isAuthenticated: req.session.isLoggedIn,
-        user: req.user
-    });
+    Blog.find().then(articles => {
+        res.render('blog/topics', {
+            pageTitle: 'Topics',
+            countWebdev: articles.filter(blog => blog.topic === 'Webdev').length,
+            countAppdev: articles.filter(blog => blog.topic === 'Appdev').length,
+            countMl: articles.filter(blog => blog.topic === 'ML').length,
+            countSystems: articles.filter(blog => blog.topic === 'Systems').length,
+            countGamedev: articles.filter(blog => blog.topic === 'Gamedev').length,
+            countCybersecurity: articles.filter(blog => blog.topic === 'Cybersecurity').length,
+            path: '/topics',
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user,
+            
+        });
+
+    }).catch(err => console.log(err));
+   
+    
+    
 };
 
 exports.getCreateBlog = (req, res, next) => {
@@ -44,6 +60,7 @@ exports.postCreateBlog = (req, res, next) => {
     const subtitle = req.body.subtitle;
     const topic = req.body.topic;
     const blogText = req.body.blog;
+        
     const blog = new Blog({
         title: title,
         subtitle: subtitle,
@@ -68,12 +85,16 @@ exports.postCreateBlog = (req, res, next) => {
 
 exports.getBlog = (req, res, next) => {
     const blogId = req.params.articleId;
+    // const blogId = mongoose.Types.ObjectId('600b1c198172d20ac0b341a0');
+    // console.log(req.params.articleId);
+    // console.log(req.params.articleId.length);
+    
     Blog.findById(blogId).populate('userId')
     .then(article => {
         res.render('blog/blog', {
             blog: article,
             pageTitle: article.title,
-            path: '/blogs',
+            // path: '/blogs',
             isAuthenticated: req.session.isLoggedIn,
             user: req.user
 
@@ -168,6 +189,7 @@ exports.postEditBlog = (req, res, next) => {
         blog.subtitle = updatedSubtitle;
         blog.topic = updatedTopic;
         blog.text = updatedblogText;
+        
         return blog.save();
     })
     .then(result => {
@@ -181,10 +203,79 @@ exports.postEditBlog = (req, res, next) => {
 };
 
 exports.getWebdev = (req, res, next) => {
-    res.render('blog/articles', {
-        pageTitle: 'Webdev',
-        isAuthenticated: req.session.isLoggedIn,
-        user: req.user
-    });
+    Blog.find({topic: 'Webdev'}).populate({path:'userId', select:'name' }).then(articles => {
+        res.render('blog/articles', {
+            blogs: articles,
+            pageTitle: 'Webdev',
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
+        });
+
+    }).catch(err => console.log(err));
+    
 };
 
+exports.getAppdev = (req, res, next) => {
+    Blog.find({topic: 'Appdev'}).populate({path:'userId', select:'name' }).then(articles => {
+        res.render('blog/articles', {
+            blogs: articles,
+            pageTitle: 'Appdev',
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
+        });
+
+    }).catch(err => console.log(err));
+    
+};
+
+exports.getMl = (req, res, next) => {
+    Blog.find({topic: 'ML'}).populate({path:'userId', select:'name' }).then(articles => {
+        res.render('blog/articles', {
+            blogs: articles,
+            pageTitle: 'ML/AI',
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
+        });
+
+    }).catch(err => console.log(err));
+    
+};
+
+exports.getSystems = (req, res, next) => {
+    Blog.find({topic: 'Systems'}).populate({path:'userId', select:'name' }).then(articles => {
+        res.render('blog/articles', {
+            blogs: articles,
+            pageTitle: 'Systems',
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
+        });
+
+    }).catch(err => console.log(err));
+    
+};
+
+exports.getGamedev = (req, res, next) => {
+    Blog.find({topic: 'Gamedev'}).populate({path:'userId', select:'name' }).then(articles => {
+        res.render('blog/articles', {
+            blogs: articles,
+            pageTitle: 'Gamedev',
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
+        });
+
+    }).catch(err => console.log(err));
+    
+};
+
+exports.getCybersecurity = (req, res, next) => {
+    Blog.find({topic: 'Cybersecurity'}).populate({path:'userId', select:'name' }).then(articles => {
+        res.render('blog/articles', {
+            blogs: articles,
+            pageTitle: 'Cybersecurity',
+            isAuthenticated: req.session.isLoggedIn,
+            user: req.user
+        });
+
+    }).catch(err => console.log(err));
+    
+};
