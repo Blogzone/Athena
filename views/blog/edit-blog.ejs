@@ -12,7 +12,7 @@
             <div class="content">
                <main class="create-blog">
                     <h1 class="section-headline">Edit Blog</h1>
-                    <form class="blog-form" action="/<% if (editing) { %>edit-blog<% } else { %>create-blog<% } %>" method="POST">
+                    <form class="blog-form" action="/<% if (editing) { %>edit-blog<% } else { %>create-blog<% } %>" method="POST" enctype="multipart/form-data">
                         <div class="form-control">
                             <label for="title">Title</label>
                             <input required type="text" name="title" id="title" value="<% if (editing) { %><%= blog.title %><% } %>">
@@ -40,6 +40,12 @@
                             <label for="blog">Blog</label>
                             <textarea name="blog" id="blog" rows="20" ><% if (editing) { %><%= blog.text %><% } %></textarea>
                         </div>
+
+                        <div class="form-control">
+                            <label for="blog">Blog</label>
+                            <input type="file" name="image" id="image">
+                        </div>
+
                         <% if (editing) { %>
                             <input type="hidden" value="<%= blog._id %>" name="blogId">
                         <% } %>

@@ -56,16 +56,19 @@ exports.getCreateBlog = (req, res, next) => {
 };
 
 exports.postCreateBlog = (req, res, next) => {
+    
     const title = req.body.title;
     const subtitle = req.body.subtitle;
     const topic = req.body.topic;
     const blogText = req.body.blog;
+    const imageURL = req.file.filename;
         
     const blog = new Blog({
         title: title,
         subtitle: subtitle,
         topic: topic,
         text: blogText,
+        imageUrl: imageURL,
         userId: req.user
     });
     blog.save().then(blog => {
@@ -181,6 +184,7 @@ exports.postEditBlog = (req, res, next) => {
     const updatedSubtitle = req.body.subtitle;
     const updatedTopic = req.body.topic;
     const updatedblogText = req.body.blog;
+    const image = req.file;
     const user = req.user;
 
     Blog.findById(blogId)
@@ -189,6 +193,9 @@ exports.postEditBlog = (req, res, next) => {
         blog.subtitle = updatedSubtitle;
         blog.topic = updatedTopic;
         blog.text = updatedblogText;
+        if(image) {
+            blog.imageUrl = image.filename
+        }
         
         return blog.save();
     })

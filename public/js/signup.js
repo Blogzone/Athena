@@ -33,10 +33,10 @@ var strength = {
   });
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
+    
     validateForm();
-    clearForm();
+    e.preventDefault();
+    // clearForm();
 
 });
 

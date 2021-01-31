@@ -19,15 +19,27 @@ const store = new MongoDBStore({
     collection: 'sessions'
 });
 
-
-
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './public/uploads/images');
+
+    },
+    filename: function(req, file, cb) {
+        cb(null, Date.now() + file.originalname)
+    }
+});
+
+
+
 
 const blogRoutes = require('./routes/blog');
 const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(multer({storage: storage}).single('image'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

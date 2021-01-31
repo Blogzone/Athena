@@ -12,7 +12,7 @@
             <div class="content">
                <main class="create-blog">
                     <h1 class="section-headline">Create a Blog</h1>
-                    <form class="blog-form" action="/create-blog" method="POST">
+                    <form class="blog-form" action="/create-blog" method="POST" enctype="multipart/form-data">
                         <div class="form-control">
                             <label for="title">Title</label>
                             <input required type="text" name="title" id="title">
@@ -39,7 +39,11 @@
                         <div class="form-control">
                             <label for="blog">Blog</label>
                             <textarea name="blog" id="blog" rows="20"></textarea>
-                        </div>                        
+                        </div>      
+                        <div class="form-control">
+                            <label for="blog">Blog</label>
+                            <input type="file" name="image" id="image">
+                        </div>                  
             
                         <button class="btn" type="submit">Create</button>
                     </form>
